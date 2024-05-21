@@ -103,7 +103,7 @@ function movejogador() {
 }// fim da função movejogador()
 
 function moveinimigo1(){
-  posicaoX = parseInt($("#inimigo1").css("left"));
+  let posicaoX = parseInt($("#inimigo1").css("left"));
   $("#inimigo1").css("left", posicaoX - velocidade);
   $("#inimigo1").css("top", posicaoY);
 
@@ -116,6 +116,7 @@ function moveinimigo1(){
 }// fim da função moveinimigo1()
 
 function moveinimigo2(){
+  let posicaoX = parseInt($("#inimigo2").css("left"));
   $("#inimigo2").css("left", posicaoX - 3);
   
   if(posicaoX <= 0){
@@ -170,7 +171,6 @@ function colisao(){
   var colisao5 = ($("#jogador").collision($("#amigo")));
   var colisao6 = ($("#inimigo2").collision($("#amigo")));
   // jogador com o inimigo1
-
   if(colisao1.length > 0){
     energiaAtual--;
     inimigo1X = parseInt($("#inimigo1").css("left"));
@@ -181,6 +181,7 @@ function colisao(){
     $("#inimigo1").css("left", 694);
     $("#inimigo1").css("top", posicaoY);
   }
+
   //jogador com inimigo2
   if(colisao2.length > 0){
     energiaAtual--;
@@ -190,6 +191,7 @@ function colisao(){
     explosao2(inimigo2X, inimigo2Y);
     $("#inimigo2").remove();
     reposicionaInimigo2();
+  
   }
   //jogador com amigo
   if(colisao5.length > 0){
@@ -198,8 +200,8 @@ function colisao(){
     amigoY = parseInt($("#amigo").css("top"));
     $("#amigo").remove();
     reposicionaAmigo();
-
   }
+
    //Inimigo2 com Amigo
    if(colisao6.length > 0){
     perdidos++;
@@ -210,8 +212,8 @@ function colisao(){
 
     reposicionaAmigo();
    }
+   
     //Disparo com inimigo1
-
     if(colisao3.length > 0){
       velocidade = velocidade + 0.3;
       pontos = pontos + 100;
