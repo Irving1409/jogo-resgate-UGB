@@ -193,26 +193,6 @@ function colisao(){
     reposicionaInimigo2();
   
   }
-  //jogador com amigo
-  if(colisao5.length > 0){
-    salvo++;
-    amigoX = parseInt($("#amigo").css("left"));
-    amigoY = parseInt($("#amigo").css("top"));
-    $("#amigo").remove();
-    reposicionaAmigo();
-  }
-
-   //Inimigo2 com Amigo
-   if(colisao6.length > 0){
-    perdidos++;
-    amigoX = parseInt($("#amigo").css("left"));
-    amigoY = parseInt($("#amigo").css("top"));
-    explosao3(amigoX,amigoY);
-    $("#amigo").remove();
-
-    reposicionaAmigo();
-   }
-   
     //Disparo com inimigo1
     if(colisao3.length > 0){
       velocidade = velocidade + 0.3;
@@ -230,11 +210,28 @@ function colisao(){
       inimigo2X = parseInt($("#inimigo2").css("left"));
       inimigo2Y = parseInt($("#inimigo2").css("top"));
       explosao2(inimigo2X, inimigo2Y);
-    
-      posicaoY = parseInt(Math.random() * 334);  
+     
       $("#inimigo2").css("left", 694);
-      $("#inimigo2").css("top", posicaoY);
     }
+  //jogador com amigo
+  if(colisao5.length > 0){
+    salvos++;
+    reposicionaAmigo();
+    $("#amigo").remove();
+   
+  }
+
+   //Inimigo2 com Amigo
+   if(colisao6.length > 0){
+    perdidos++;
+    amigoX = parseInt($("#amigo").css("left"));
+    amigoY = parseInt($("#amigo").css("top"));
+    explosao3(amigoX,amigoY);
+    $("#amigo").remove();
+
+    reposicionaAmigo();
+   }
+
 }// Fim da função colisao()
 
 //Explosão 1
