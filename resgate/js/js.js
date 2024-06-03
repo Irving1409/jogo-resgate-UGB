@@ -141,7 +141,7 @@ function disparo(){
     topo = parseInt($("#jogador").css("top"))
     posicaoX = parseInt($("#jogador").css("left"))
     tiroX = posicaoX + 190;
-    topoTiro = topo + 37;
+    topoTiro = topo + 118;
     $("#fundoGame").append("<div id='disparo'></div>");
     $("#disparo").css("top", topoTiro);
     $("#disparo").css("left", tiroX);
@@ -152,7 +152,7 @@ function disparo(){
 
   function executaDisparo(){
     posicaoX = parseInt($("#disparo").css("left"));
-    $("#disparo").css("left", posicaoX + 15);
+    $("#disparo").css("left", posicaoX + 25);
 
     if(posicaoX > 900){
       window.clearInterval(tempoDisparo);

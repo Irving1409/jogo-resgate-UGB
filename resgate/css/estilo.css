@@ -24,8 +24,7 @@ body {
 #fundoGame {
   width: 950px;
   height: 630px;
-  background-image: url(../imgs/fundo_game2.png);
-  border-color: #FFF;
+  background-image: url(../imgs/fundo_game5.jpeg);
   border-style: solid;
 }
 
@@ -53,16 +52,16 @@ body {
   position: absolute;
   left: 775px;
   top: 477px;
-  background-image: url(../imgs/inimigo2.png);
+  background-image: url(../imgs/inimigo2.1.png);
 }
 
 #amigo {
-  width: 44px;
-  height: 51px;
+  width: 35px;
+  height: 56px;
   position: absolute;
   left: 5px;
   top: 500px;
-  background-image: url(../imgs/amigo.png);
+  background-image: url(../imgs/amigo6.png);
 }
 
 #inicio {
@@ -78,8 +77,8 @@ body {
 
 .anima1{
   width: 226px;
-  height: 66px;
-  background-image: url(../imgs/helicoptero.png);
+  height: 220px;
+  background-image: url(../imgs/helicoptero2Dedit.png);
   animation: play .9s steps(2) infinite;
 }
 
@@ -89,10 +88,10 @@ body {
 }
 
 .anima2{
-  width: 44.5px;
-  height: 51px;
-  background-image: url(../imgs/amigo.png);
-  animation: play2 .6s steps(12) infinite;
+  width: 35px;
+  height: 56px;
+  background-image: url(../imgs/amigo6.png);
+  animation: play2 .6s steps(8) infinite;
 }
 
 @keyframes play2 {
@@ -101,9 +100,9 @@ body {
 }
 
 .anima3{
-  width: 256px;
-  height: 107px;
-  background-image: url(../imgs/inimigo1.png);
+  width: 124px;
+  height: 150px;
+  background-image: url(../imgs/inimigo4.png);
   animation: play3 .5s steps(1) infinite;
 }
 
