@@ -58,7 +58,7 @@ function movejogador() {
   if(jogo.pressionou[TECLA.W]){
     var topo = parseInt($("#jogador").css("top"));
 
-    if (topo <= 30){}
+    if (topo <= 0){}
 
     else{
       $("#jogador").css("top", topo - 10)
@@ -68,7 +68,7 @@ function movejogador() {
   if(jogo.pressionou[TECLA.S]){
     var topo = parseInt($("#jogador").css("top"));
 
-    if (topo >= 500){}
+    if (topo >= 410){}
 
     else{
       $("#jogador").css("top", topo + 10)
@@ -109,8 +109,8 @@ function moveinimigo1(){
 
   if (posicaoX <= 0){
 
-    posicaoY = parseInt(Math.random() * 334);
-    $("#inimigo1").css("left", 694);
+    posicaoY = parseInt(Math.random() * 500);
+    $("#inimigo1").css("left", 950);
     $("#inimigo1").css("top", posicaoY);
   }
 }// fim da função moveinimigo1()
@@ -240,14 +240,14 @@ function explosao1(inimigo1X, inimigo1Y){
 
   somExplosao.play();
   $("#fundoGame").append("<div id='explosao1'></div>");
-  $("#explosao1").css("background-image","url(imgs/explosao.png)");
+  $("#explosao1").css("background-image","url(imgs/explosao2edit.png)");
 
   var div = $("#explosao1");
   div.css("top", inimigo1Y);
   div.css("left", inimigo1X);
   div.animate({width:200, opacity:0}, "slow");
 
-  var tempoExplosao = window.setInterval(removeExplosao, 1000);
+  var tempoExplosao = window.setInterval(removeExplosao, 10000);
     function removeExplosao(){
       div.remove();
       window.clearInterval(tempoExplosao);
@@ -260,7 +260,7 @@ function explosao1(inimigo1X, inimigo1Y){
 function explosao2(inimigo2X, inimigo2Y){
   /*somExplosao.play();*/
   $("#fundoGame").append("<div id='explosao2'></div>");
-  $("#explosao2").css("background-image","url(imgs/explosao.png)");
+  $("#explosao2").css("background-image","url(imgs/explosao2edit.png)");
 
   var div2 = $("#explosao2");
   div2.css("top", inimigo2Y);
@@ -318,7 +318,7 @@ function reposicionaInimigo2(){
   //Função placar
   
   function placar(){
-    $("#placar").html("<h2>Pontos:" + pontos + " Salvos:" + salvos + " Perdidos:" + perdidos + "</h2>");
+    $("#placar").html("<h2>Pontos:" + pontos /*+ " Salvos:" + salvos + " Perdidos:" + perdidos */+ "</h2>");
   }//fim da função placar()
 
   //Barra de energia
